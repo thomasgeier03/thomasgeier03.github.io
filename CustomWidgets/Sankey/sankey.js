@@ -33,7 +33,7 @@ option = {
       },
       {
         source: 'a',
-e        target: 'a2',
+        target: 'a2',
         value: 3
       },
       {
