@@ -66,16 +66,16 @@ var getScriptPromisify = (src) => {
       this._echart = echarts.init(this._root, 'wight')
       const option = {
         title: {
-          text: 'Progress Gauge'
+          text: 'Gauge'
         },
         series: [
           {
             type: 'gauge',
-            startAngle: 180,
+            startAngle: 100,
             endAngle: 0,
             min: 0,
-            max: 200,
-            splitNumber: 4,
+            max: 100,
+            splitNumber: 5,
             itemStyle: {
               color: '#008FD3',
               shadowColor: 'rgba(0,0,0,0)',
@@ -120,13 +120,13 @@ var getScriptPromisify = (src) => {
               fontSize: 16
             },
             title: {
-              show: true
+              show: false
             },
             detail: {
               backgroundColor: '#fff',
               borderColor: '#999',
               borderWidth: 1,
-              width: '60%',
+              width: '80%',
               lineHeight: 40,
               height: 40,
               borderRadius: 4,
