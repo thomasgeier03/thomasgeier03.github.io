@@ -65,8 +65,11 @@ var getScriptPromisify = (src) => {
 
       this._echart = echarts.init(this._root, 'wight')
       const option = {
+        title: {
+          text: 'Progress Gauge'
+        },
         series: [
-          {
+          {            
             type: 'gauge',
             startAngle: 180,
             endAngle: 0,
