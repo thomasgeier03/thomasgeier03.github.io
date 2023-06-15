@@ -71,7 +71,7 @@ var getScriptPromisify = (src) => {
         series: [
           {
             type: 'gauge',
-            startAngle: 360,
+            startAngle: 180,
             endAngle: 0,
             min: 0,
             max: 100,
