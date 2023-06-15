@@ -27,7 +27,7 @@ var getScriptPromisify = (src) => {
     return value
   }
 
-  const COLORS = ['#FF6E76', '#FDDD60', '#58D9F9', '#7CFFB2']
+  const COLORS = ['#f3252e', '#e69138', '#45e201']
 
   class Renderer {
     constructor (root) {
@@ -51,8 +51,7 @@ var getScriptPromisify = (src) => {
       const ranges = [
         { value: parse(stops[1], min, max), color: colors[0] },
         { value: parse(stops[2], min, max), color: colors[1] },
-        { value: parse(stops[3], min, max), color: colors[2] },
-        { value: parse(stops[4], min, max), color: colors[3] }
+        { value: parse(stops[3], min, max), color: colors[2] }
       ]
       const raw = data[0][measures[0].key].raw
       const value = parse(raw, min, max)
