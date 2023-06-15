@@ -80,18 +80,6 @@ var getScriptPromisify = (src) => {
               shadowOffsetX: 0,
               shadowOffsetY: 0
             },
-            axisLine: {
-              roundCap: true,
-              lineStyle: {
-                width: 18,
-                color: [
-                  [0, '#ff0000'],  // Rot für Werte von 0 bis 25
-                  [25 / 100, '#ff8800'],  // Orange für Werte von 25 bis 50
-                  [50 / 100, '#00ff00'],  // Grün für Werte von 50 bis 100
-                  [1, '#00ff00']  // Grün für Werte über 100
-                ]
-              }
-            },
             progress: {
               show: true,
               roundCap: true,
