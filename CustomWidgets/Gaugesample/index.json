@@ -12,14 +12,14 @@
     {
       "kind": "main",
       "tag": "com-sap-sac-sample-echarts-gaugegrade",
-      "url": "/main.js",
+      "url": "https://thomasgeier03.github.io/CustomWidgets/Gaugesample/main.js",
       "integrity": "",
       "ignoreIntegrity": true
     },
     {
       "kind": "styling",
       "tag": "com-sap-sac-sample-echarts-gaugegrade-styling",
-      "url": "/styling.js",
+      "url": "https://thomasgeier03.github.io/CustomWidgets/Gaugesample/styling.js",
       "integrity": "",
       "ignoreIntegrity": true
     }
