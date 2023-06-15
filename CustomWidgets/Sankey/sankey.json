@@ -12,7 +12,7 @@
     {
       "kind": "main",
       "tag": "com-sap-sac-sample-echarts-sankey",
-      "url": "/main.js",
+      "url": "https://thomasgeier03.github.io/CustomWidgets/Sankey/sankey.js",
       "integrity": "",
       "ignoreIntegrity": true
     }
