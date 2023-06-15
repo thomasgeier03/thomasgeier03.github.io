@@ -75,9 +75,13 @@ var getScriptPromisify = (src) => {
             endAngle: 0,
             min: 0,
             max: 100,
-            splitNumber: 5,
+            splitNumber: 5,                     
             itemStyle: {
-              color: '#008FD3',
+               color: [
+                [0, '#00FF00'],   // Verde da 0 a 40
+                [0.4, '#FFFF00'], // Giallo da 41 a 80
+                [1, '#FF0000']    // Rosso da 81 a 100
+              ],
               shadowColor: 'rgba(0,0,0,0)',
               shadowBlur: 0,
               shadowOffsetX: 0,
