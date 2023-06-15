@@ -120,7 +120,7 @@ var getScriptPromisify = (src) => {
               fontSize: 16
             },
             title: {
-              show: false
+              show: true
             },
             detail: {
               backgroundColor: '#fff',
