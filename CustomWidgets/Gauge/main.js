@@ -67,6 +67,9 @@ var getScriptPromisify = (src) => {
       const option = {
   series: [
     {
+      title: {
+          text: 'Gauge Sample'
+        },
       type: 'gauge',
       axisLine: {
         lineStyle: {
