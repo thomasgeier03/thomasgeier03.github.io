@@ -69,7 +69,7 @@ var getScriptPromisify = (src) => {
           text: 'Progress Gauge'
         },
         series: [
-          {            
+          {
             type: 'gauge',
             startAngle: 180,
             endAngle: 0,
