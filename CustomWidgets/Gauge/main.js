@@ -78,9 +78,8 @@ var getScriptPromisify = (src) => {
             splitNumber: 5,                     
             itemStyle: {
                color: [
-                [0, '#00FF00'],   // Verde da 0 a 40
-                [0.4, '#FFFF00'], // Giallo da 41 a 80
-                [1, '#FF0000']    // Rosso da 81 a 100
+                [0,1 '#47cc4e']   // Verde da 0 a 40
+                
               ],
               shadowColor: 'rgba(0,0,0,0)',
               shadowBlur: 0,
@@ -130,11 +129,11 @@ var getScriptPromisify = (src) => {
               backgroundColor: '#fff',
               borderColor: '#999',
               borderWidth: 1,
-              width: '80%',
+              width: '100%',
               lineHeight: 40,
               height: 40,
               borderRadius: 4,
-              offsetCenter: [0, '35%'],
+              offsetCenter: [0, '50%'],
               valueAnimation: true,
               formatter: function (value) {
                 return '{value|' + value.toFixed(0) + '}'
