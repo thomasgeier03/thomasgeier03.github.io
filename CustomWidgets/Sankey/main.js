@@ -78,7 +78,7 @@ var getScriptPromisify = (src) => {
       // https://echarts.apache.org/en/option.html
       this._echart.setOption({
         title: {
-          text: ''
+          text: 'Sankey Sample'
         },
         tooltip: {
           trigger: 'item',
