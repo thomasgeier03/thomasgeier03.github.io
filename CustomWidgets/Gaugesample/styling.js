@@ -29,9 +29,6 @@
           <input id="stop3" type="text" placeholder="" />
       </div>
       <div>
-          <input id="stop4" type="text" placeholder="" />
-      </div>
-      <div>
           <button id="button">Apply</button>
       </div>
   </div>
@@ -51,8 +48,7 @@
           Number(this._shadowRoot.getElementById('stop0').value),
           Number(this._shadowRoot.getElementById('stop1').value),
           Number(this._shadowRoot.getElementById('stop2').value),
-          Number(this._shadowRoot.getElementById('stop3').value),
-          Number(this._shadowRoot.getElementById('stop4').value)
+          Number(this._shadowRoot.getElementById('stop3').value)
         ]
         const reverse = this._shadowRoot.getElementById('reverse').checked
         this.dispatchEvent(new CustomEvent('propertiesChanged', { detail: { properties: { stops, reverse } } }))
@@ -71,7 +67,6 @@
         this._shadowRoot.getElementById('stop1').value = changedProps.stops[1]
         this._shadowRoot.getElementById('stop2').value = changedProps.stops[2]
         this._shadowRoot.getElementById('stop3').value = changedProps.stops[3]
-        this._shadowRoot.getElementById('stop4').value = changedProps.stops[4]
       }
       if (changedProps.reverse !== undefined) {
         this._shadowRoot.getElementById('reverse').checked = changedProps.reverse
