@@ -1,3 +1,17 @@
+var getScriptPromisify = (src) => {
+  return new Promise(resolve => {
+    $.getScript(src, resolve)
+  })
+}
+
+(function () {
+  const prepared = document.createElement('template')
+  prepared.innerHTML = `
+    <style>
+    </style>
+  <div id="root" style ="width: 100%; height:100%;">
+    </div>
+    `
 option = {
   series: {
     type: 'sankey',
