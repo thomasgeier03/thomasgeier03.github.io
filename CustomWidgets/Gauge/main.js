@@ -65,9 +65,6 @@ var getScriptPromisify = (src) => {
 
       this._echart = echarts.init(this._root, 'wight')
       const option = {
-        title: {
-          text: 'Gauge'
-        },
         series: [
           {
             type: 'gauge',
