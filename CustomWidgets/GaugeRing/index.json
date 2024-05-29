@@ -1,72 +1,105 @@
 {
     "eula": "",
-  "vendor": "SAP",
-  "license": "",
-  "id": "com.sap.sac.sample.echarts.gaugegrade",
-  "version": "1.0.0",
-  "supportsMobile": true,
-  "name": "EChartsGaugeGrade",
-  "newInstancePrefix": "EChartsGaugeGrade",
-  "description": "A sample custom widget project",
-  "webcomponents": [
-    {
-      "kind": "main",
-      "tag": "com-sap-sac-sample-echarts-gaugegrade",
-      "url": "https://thomasgeier03.github.io/CustomWidgets/GaugeRing/main.js",
-      "integrity": "",
-      "ignoreIntegrity": true
-    }
-  ],
-    "gaugeData": [
+    "vendor": "SAP",
+    "license": "",
+    "id": "com.sap.sac.sample.echarts.gaugering",
+    "version": "1.0.0",
+    "supportsMobile": true,
+    "name": "EChartsGaugeRing",
+    "newInstancePrefix": "EChartsGaugeRing",
+    "description": "A sample custom widget project",
+    "webcomponents": [
       {
-        "value": 20,
-        "name": "Perfect",
-        "title": {
-          "offsetCenter": ["0%", "-30%"]
-        },
-        "detail": {
-          "valueAnimation": true,
-          "offsetCenter": ["0%", "-20%"]
-        }
-      },
-      {
-        "value": 40,
-        "name": "Good",
-        "title": {
-          "offsetCenter": ["0%", "0%"]
-        },
-        "detail": {
-          "valueAnimation": true,
-          "offsetCenter": ["0%", "10%"]
-        }
-      },
-      {
-        "value": 60,
-        "name": "Commonly",
-        "title": {
-          "offsetCenter": ["0%", "30%"]
-        },
-        "detail": {
-          "valueAnimation": true,
-          "offsetCenter": ["0%", "40%"]
-        }
+        "kind": "main",
+        "tag": "com-sap-sac-sample-echarts-gaugering",
+        "url": "https://thomasgeier03.github.io/CustomWidgets/GaugeRing/main.js",
+        "integrity": "",
+        "ignoreIntegrity": true
       }
-      
     ],
-    "dataBindings": {
-        "dataBinding": {
-          "feeds": [
-            {
-              "id": "dimensions",
-              "description": "Dimensions",
-              "type": "dimension"
+    "properties": {
+      "width": {
+        "type": "integer",
+        "default": 600
+      },
+      "height": {
+        "type": "integer",
+        "default": 320
+      },
+      "gaugeData": {
+        "type": "object[]",
+        "default": [
+          {
+            "value": 20,
+            "name": "Perfect",
+            "title": {
+              "offsetCenter": ["0%", "-30%"]
             },
-            {
-              "id": "measures",
-              "description": "Measures",
-              "type": "mainStructureMember"
+            "detail": {
+              "valueAnimation": true,
+              "offsetCenter": ["0%", "-20%"]
             }
-          ]
-        }
+          },
+          {
+            "value": 40,
+            "name": "Good",
+            "title": {
+              "offsetCenter": ["0%", "0%"]
+            },
+            "detail": {
+              "valueAnimation": true,
+              "offsetCenter": ["0%", "10%"]
+            }
+          },
+          {
+            "value": 60,
+            "name": "Commonly",
+            "title": {
+              "offsetCenter": ["0%", "30%"]
+            },
+            "detail": {
+              "valueAnimation": true,
+              "offsetCenter": ["0%", "40%"]
+            }
+          }
+        ]
+      }
+    },
+    "events": {},
+    "methods": {},
+    "types": {
+      "Range": {
+        "description": "",
+        "properties": [
+          {
+            "name": "value",
+            "type": "number",
+            "description": "",
+            "mandatory": true
+          },
+          {
+            "name": "color",
+            "type": "string",
+            "description": "",
+            "mandatory": true
+          }
+        ]
+      }
+    },
+    "dataBindings": {
+      "dataBinding": {
+        "feeds": [
+          {
+            "id": "dimensions",
+            "description": "Dimensions",
+            "type": "dimension"
+          },
+          {
+            "id": "measures",
+            "description": "Measures",
+            "type": "mainStructureMember"
+          }
+        ]
+      }
     }
   }

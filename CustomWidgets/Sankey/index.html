@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sankey Widget Test</title>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <com-sap-sac-sample-echarts-sankey id="sankey-widget"></com-sap-sac-sample-echarts-sankey>
+    <script>
+        const widget = document.getElementById('sankey-widget');
+        widget.dataBinding = {
+                nodes: [
+                    { name: 'Node 1' },
+                    { name: 'Node 2' },
+                    { name: 'Node 3' }
+                ],
+                links: [
+                    { source: 'Node 1', target: 'Node 2', value: 10 },
+                    { source: 'Node 2', target: 'Node 3', value: 5 },
+                    { source: 'Node 3', target: 'Node 1', value: 8 }
+                ]
+        };
+    </script>
+</body>
+
+</html>
