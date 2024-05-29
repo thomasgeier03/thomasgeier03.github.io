@@ -1,21 +1,30 @@
 (function () {
     let tmpl = document.createElement('template');
     tmpl.innerHTML = 
-    `<button type="button" id="myBtn">Helper Button</button>` ; 
+    `<button type="button" id="myBtn"></button>` ; 
   
     class PerformanceHelp extends HTMLElement {
         constructor() {
             super();
-            this.init();           
-        }
-    
-        init() {            
-            let shadowRoot = this.attachShadow({mode: "open"});
-            shadowRoot.appendChild(tmpl.content.cloneNode(true));
-            this.addEventListener("click", event => {
+            this._shadowRoot = this.attachShadow({mode: "open"});
+            this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
+            this._button = this._shadowRoot.querySelector("#myBtn");
+            this._button.addEventListener("click", event => {
                 var event = new Event("onClick");        
                 this.dispatchEvent(event);
-            });           
+            });
+        }
+
+        static get observedAttributes() {
+            return ['button-text'];
+        }
+
+        attributeChangedCallback(name, oldValue, newValue) {
+            switch(name) {
+                case 'button-text':
+                    this._button.textContent = newValue;
+                    break;
+            }
         }
     }
 
