@@ -14,15 +14,7 @@
             "tag": "custom-button",
             "url": "https://thomasgeier03.github.io/CustomWidgets/Test/Webcomponent.js",
             "integrity": "",
-            "ignoreIntegrity": true,
-            "attributes": [
-                {
-                    "name": "button-text",
-                    "bindable": true,
-                    "type": "string",
-                    "description": "The text displayed on the button"
-                }
-            ]
+            "ignoreIntegrity": true
         }       
     ],
     "properties": {
@@ -47,6 +39,6 @@
     },
     "events": {
         "onClick": {
-    }
+    	}
 	}
 }

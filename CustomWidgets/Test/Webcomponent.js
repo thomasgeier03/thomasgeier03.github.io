@@ -15,16 +15,12 @@
             });
         }
 
-        static get observedAttributes() {
-            return ['button-text'];
+        set buttonText(value) {
+            this._button.textContent = value;
         }
 
-        attributeChangedCallback(name, oldValue, newValue) {
-            switch(name) {
-                case 'button-text':
-                    this._button.textContent = newValue;
-                    break;
-            }
+        get buttonText() {
+            return this._button.textContent;
         }
     }
 
