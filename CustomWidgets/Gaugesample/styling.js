@@ -62,6 +62,7 @@
     }
 
     async onCustomWidgetAfterUpdate (changedProps) {
+      console.log(changedProps.stops); // Log the stops values to the console
       if (changedProps.stops) {
         this._shadowRoot.getElementById('stop0').value = changedProps.stops[0]
         this._shadowRoot.getElementById('stop1').value = changedProps.stops[1]
