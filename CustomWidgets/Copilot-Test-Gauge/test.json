@@ -1,0 +1,71 @@
+{
+    "id": "customGaugeWidget",
+    "name": "Custom Gauge Widget",
+    "description": "A customizable gauge widget with adjustable placeholders and colors.",
+    "version": "1.0.0",
+    "eula": "",
+    "license": "",
+    "webcomponent": [
+        {
+            "kind": "main",
+            "tag": "custom-gauge-widget",
+            "url": "https://thomasgeier03.github.io/CustomWidgets/Copilot-Test-Gauge/main.js",
+            "integrity": "",
+            "ignoreIntegrity": true
+        }
+    ],
+    "properties": {
+        "width": {
+            "title": "Width",
+            "description": "Set the width of the gauge.",
+            "type": "integer",
+            "defaultValue": 600
+        },
+        "height": {
+            "title": "Height",
+            "description": "Set the height of the gauge.",
+            "type": "integer",
+            "defaultValue": 320
+        },
+        "placeholders": {
+            "title": "Placeholders",
+            "description": "Define the placeholders for the gauge.",
+            "type": "array",
+            "items": {
+                "type": "string"    
+            },
+            "defaultValue": ["Placeholder 1", "Placeholder 2", "Placeholder 3"]
+        },
+        "methods": {
+            "setValue":{
+                "description": "Set the value of the gauge.",
+                "parameters": {
+                    "value": {
+                        "name": "value",
+                        "type": "integer",
+                        "description": "The value to set the gauge to."
+                    }
+                },
+                "body": "this.value = value; this.update();"
+            },
+            "getValue":{
+                "description": "Get the current value of the gauge.",
+                "returns": {
+                    "type": "integer",
+                    "description": "The current value of the gauge.",
+                    "body": "return this.value;"
+                }
+            }
+        },
+        "colors": {
+            "title": "Colors",
+            "description": "Set the colors for each placeholder.",
+            "type": "array",
+            "items": {
+            "type": "string",
+            "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+            },
+            "defaultValue": ["#FF0000", "#00FF00", "#0000FF"]
+        }
+    }
+}
