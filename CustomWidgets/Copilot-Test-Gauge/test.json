@@ -5,7 +5,8 @@
     "version": "1.0.0",
     "eula": "",
     "license": "",
-    "webcomponent": [
+    "newInstancePrefix": "test",
+    "webcomponents": [
         {
             "kind": "main",
             "tag": "custom-gauge-widget",
@@ -16,56 +17,59 @@
     ],
     "properties": {
         "width": {
-            "title": "Width",
-            "description": "Set the width of the gauge.",
             "type": "integer",
-            "defaultValue": 600
+            "default": 600
         },
         "height": {
-            "title": "Height",
-            "description": "Set the height of the gauge.",
             "type": "integer",
-            "defaultValue": 320
+            "default": 320
         },
         "placeholders": {
-            "title": "Placeholders",
-            "description": "Define the placeholders for the gauge.",
+            "description": "Placeholders for the gauge.",
             "type": "array",
-            "items": {
-                "type": "string"    
-            },
-            "defaultValue": ["Placeholder 1", "Placeholder 2", "Placeholder 3"]
+            "default": ["Placeholder 1", "Placeholder 2", "Placeholder 3"]
         },
-        "methods": {
-            "setValue":{
-                "description": "Set the value of the gauge.",
-                "parameters": {
-                    "value": {
-                        "name": "value",
-                        "type": "integer",
-                        "description": "The value to set the gauge to."
-                    }
-                },
-                "body": "this.value = value; this.update();"
-            },
-            "getValue":{
-                "description": "Get the current value of the gauge.",
-                "returns": {
-                    "type": "integer",
-                    "description": "The current value of the gauge.",
-                    "body": "return this.value;"
-                }
-            }
-        },
+        
         "colors": {
-            "title": "Colors",
             "description": "Set the colors for each placeholder.",
             "type": "array",
-            "items": {
-            "type": "string",
-            "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
-            },
-            "defaultValue": ["#FF0000", "#00FF00", "#0000FF"]
+            "default": ["#FF0000", "#00FF00", "#0000FF"]
         }
-    }
+    },
+    "events": {},
+    "methods": {
+        "setValue":{
+            "description": "Set the value of the gauge.",
+            "parameters": {
+                    "name": "value",
+                    "type": "array",
+                    "description": "The value to set the gauge to."
+            },
+            "body": "this.value = value; this.update();"
+        },
+        "getValue":{
+            "description": "Get the current value of the gauge.",
+            "parameters": {
+                "type": "array",
+                "description": "The current value of the gauge."
+            },
+            "body": "return this.value;"
+        }
+    },
+    "dataBindings": {
+        "dataBinding": {
+            "feeds": [
+                {
+                "id": "dimensions",
+                "description": "Dimensions",
+                "type": "dimension"
+                },
+                {
+                "id": "measures",
+                "description": "Measures",
+                "type": "mainStructureMember"
+                }
+            ]
+        }
+  }
 }
