@@ -27,5 +27,5 @@ function applyCustomStyling(shadowRoot) {
       color: #007bff;
     }
   `;
-  shadowRoot.appendChild(style);
+  shadowRoot.appendChild("custom-gauge-widget-styling", style);
 }
