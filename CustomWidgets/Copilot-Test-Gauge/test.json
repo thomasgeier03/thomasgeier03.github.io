@@ -1,7 +1,7 @@
 {
     "id": "customGaugeWidget",
     "name": "Custom Gauge Widget",
-    "description": "A customizable gauge widget with adjustable placeholders and colors.",
+    "description": "A customizable gauge widget with an arrow that changes with the value.",
     "version": "1.0.0",
     "eula": "",
     "license": "",
@@ -31,35 +31,24 @@
             "type": "integer",
             "default": 320
         },
-        "placeholders": {
-            "description": "Placeholders for the gauge.",
-            "type": "string[]",
-            "default": ["Placeholder 1", "Placeholder 2", "Placeholder 3"]
-        },
-        "colors": {
-            "description": "Set the colors for each placeholder.",
-            "type": "string[]",
-            "default": ["#FF0000", "#00FF00", "#0000FF"]
+        "color": {
+            "description": "Set the color for the arrow.",
+            "type": "string",
+            "default": "#FF0000"
         }
     },
     "events": {},
     "methods": {
-        
-    },
-    "dataBindings": {
-        "dataBinding": {
-            "feeds": [
+        "setColor": {
+            "description": "Set the color for the arrow.",
+            "parameters": [
                 {
-                    "id": "dimensions",
-                    "description": "Dimensions",
-                    "type": "dimension"
-                },
-                {
-                    "id": "measures",
-                    "description": "Measures",
-                    "type": "mainStructureMember"
+                    "name": "color",
+                    "type": "string",
+                    "description": "The color to set."
                 }
-            ]
+            ],
+            "body": "this.color = color;"
         }
     }
 }
