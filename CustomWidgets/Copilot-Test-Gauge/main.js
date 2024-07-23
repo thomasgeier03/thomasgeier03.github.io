@@ -1,54 +1,37 @@
-(function() {
-  let _shadowRoot;
-  let _id;
-  let _props;
+// CustomWidgets/Copilot-Test-Gauge/main.js
 
-  function render() {
-      if (!_shadowRoot) {
-          return;
-      }
-
-      const color = _props['color'] || "#FF0000";
-      const value = _props['value'] || 0;
-
-      const container = document.createElement('div');
-      container.className = 'gauge-container';
-
-      const arrow = document.createElement('div');
-      arrow.className = 'gauge-arrow';
-      arrow.style.transform = `rotate(${value * 1.8}deg)`; // Assuming value is between 0 and 100
-      arrow.style.borderColor = color;
-
-      container.appendChild(arrow);
-
-      _shadowRoot.innerHTML = '';
-      _shadowRoot.appendChild(container);
-
-      // Load and apply styling
-      loadStyling(_shadowRoot);
+class CustomGaugeWidget extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    this.color = '#FF0000'; // Default color
   }
 
-  function loadStyling(shadowRoot) {
-      applyCustomStyling(shadowRoot);
+  connectedCallback() {
+    this.render();
   }
 
-  customElements.define('custom-gauge-widget', class extends HTMLElement {
-      constructor() {
-          super();
-          _shadowRoot = this.attachShadow({ mode: 'open' });
-      }
+  setColor(color) {
+    this.color = color;
+    this.updateArrowColor();
+  }
 
-      set id(value) {
-          _id = value;
-      }
+  updateArrowColor() {
+    const arrow = this.shadowRoot.querySelector('.gauge-arrow');
+    if (arrow) {
+      arrow.style.borderBottomColor = this.color;
+    }
+  }
 
-      set props(value) {
-          _props = value;
-          render();
-      }
-  });
+  render() {
+    this.shadowRoot.innerHTML = `
+      <div class="gauge-container">
+        <div class="gauge-arrow"></div>
+      </div>
+    `;
+    applyCustomStyling(this.shadowRoot);
+    this.updateArrowColor();
+  }
+}
 
-  class Main extends HTMLElement {}
-
-  customElements.define('custom-gauge-widget', Main);
-})();
+customElements.define('custom-gauge-widget', CustomGaugeWidget);
