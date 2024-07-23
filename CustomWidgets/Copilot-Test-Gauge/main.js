@@ -31,9 +31,9 @@
       const styleScript = document.createElement('script');
       styleScript.src = 'styling.js';
       styleScript.onload = () => {
-        if (typeof applyCustomStyling === 'function') {
-          applyCustomStyling(shadowRoot);
-        }
+          if (typeof applyCustomStyling === 'function') {
+              applyCustomStyling(shadowRoot);
+          }
       };
       document.head.appendChild(styleScript);
     }

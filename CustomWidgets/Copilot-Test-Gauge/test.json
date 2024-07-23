@@ -13,6 +13,13 @@
             "url": "https://thomasgeier03.github.io/CustomWidgets/Copilot-Test-Gauge/main.js",
             "integrity": "",
             "ignoreIntegrity": true
+        },
+        {
+            "kind": "styling",
+            "tag": "custom-gauge-widget-styling",
+            "url": "https://thomasgeier03.github.io/CustomWidgets/Copilot-Test-Gauge/styling.js",
+            "integrity": "",
+            "ignoreIntegrity": true
         }
     ],
     "properties": {
@@ -26,50 +33,33 @@
         },
         "placeholders": {
             "description": "Placeholders for the gauge.",
-            "type": "array",
+            "type": "string[]",
             "default": ["Placeholder 1", "Placeholder 2", "Placeholder 3"]
         },
-        
         "colors": {
             "description": "Set the colors for each placeholder.",
-            "type": "array",
+            "type": "string[]",
             "default": ["#FF0000", "#00FF00", "#0000FF"]
         }
     },
     "events": {},
     "methods": {
-        "setValue":{
-            "description": "Set the value of the gauge.",
-            "parameters": {
-                    "name": "value",
-                    "type": "array",
-                    "description": "The value to set the gauge to."
-            },
-            "body": "this.value = value; this.update();"
-        },
-        "getValue":{
-            "description": "Get the current value of the gauge.",
-            "parameters": {
-                "type": "array",
-                "description": "The current value of the gauge."
-            },
-            "body": "return this.value;"
-        }
+        
     },
     "dataBindings": {
         "dataBinding": {
             "feeds": [
                 {
-                "id": "dimensions",
-                "description": "Dimensions",
-                "type": "dimension"
+                    "id": "dimensions",
+                    "description": "Dimensions",
+                    "type": "dimension"
                 },
                 {
-                "id": "measures",
-                "description": "Measures",
-                "type": "mainStructureMember"
+                    "id": "measures",
+                    "description": "Measures",
+                    "type": "mainStructureMember"
                 }
             ]
         }
-  }
+    }
 }
