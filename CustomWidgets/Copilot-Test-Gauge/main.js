@@ -1,37 +1,44 @@
-// CustomWidgets/Copilot-Test-Gauge/main.js
-
-class CustomGaugeWidget extends HTMLElement {
+class AverageGauge extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
-    this.color = '#FF0000'; // Default color
+    this.data = [];
+    this.width = 600;
+    this.height = 320;
   }
 
   connectedCallback() {
     this.render();
   }
 
-  setColor(color) {
-    this.color = color;
-    this.updateArrowColor();
+  setData(data) {
+    this.data = data;
+    this.updateGauge();
   }
 
-  updateArrowColor() {
-    const arrow = this.shadowRoot.querySelector('.gauge-arrow');
-    if (arrow) {
-      arrow.style.borderBottomColor = this.color;
-    }
+  updateGauge() {
+    const average = this.data.reduce((a, b) => a + b, 0) / this.data.length;
+    const percentage = (average / 100) * 100;
+    this.shadowRoot.querySelector('#gauge').innerText = `${percentage.toFixed(2)}%`;
   }
 
   render() {
     this.shadowRoot.innerHTML = `
-      <div class="gauge-container">
-        <div class="gauge-arrow"></div>
-      </div>
+      <style>
+        #gauge {
+          width: ${this.width}px;
+          height: ${this.height}px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 2em;
+          border: 1px solid #000;
+          border-radius: 50%;
+        }
+      </style>
+      <div id="gauge">0%</div>
     `;
-    applyCustomStyling(this.shadowRoot);
-    this.updateArrowColor();
   }
 }
 
-customElements.define('custom-gauge-widget', CustomGaugeWidget);
+customElements.define('com-yourvendor-averagegauge', AverageGauge);
