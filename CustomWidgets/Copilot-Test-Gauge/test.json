@@ -40,7 +40,17 @@
     },
     "events": {},
     "methods": {
-      
+      "setData": {
+        "description": "Set the data for the gauge.",
+        "parameters": [
+          {
+            "name": "data",
+            "type": "number[]",
+            "description": "The data to set."
+          }
+        ],
+        "body": "this.data = data; this.updateGauge();"
+      }
     },
     "dataBindings": {
       "dataBinding": {
