@@ -38,6 +38,12 @@ class AverageGauge extends HTMLElement {
       </style>
       <div id="gauge">0%</div>
     `;
+    this.updateDataBindings(this.data);
+  }
+
+  updateDataBindings(newBindings) {
+    this.data = newBindings;
+    this.updateGauge();
   }
 }
 
