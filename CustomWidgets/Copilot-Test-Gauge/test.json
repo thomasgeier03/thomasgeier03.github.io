@@ -11,14 +11,14 @@
     "webcomponents": [
       {
         "kind": "main",
-        "tag": "com-yourvendor-averagegauge",
+        "tag": "averagegauge-main",
         "url": "https://thomasgeier03.github.io/CustomWidgets/Copilot-Test-Gauge/main.js",
         "integrity": "",
         "ignoreIntegrity": true
       },
       {
         "kind": "styling",
-        "tag": "com-yourvendor-averagegauge-styling",
+        "tag": "averagegauge-styling",
         "url": "https://thomasgeier03.github.io/CustomWidgets/Copilot-Test-Gauge/styling.js",
         "integrity": "",
         "ignoreIntegrity": true
