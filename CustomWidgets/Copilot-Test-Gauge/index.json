@@ -45,7 +45,7 @@
         "parameters": [
           {
             "name": "data",
-            "type": "number[]",
+            "type": "integer",
             "description": "The data to set."
           }
         ],
