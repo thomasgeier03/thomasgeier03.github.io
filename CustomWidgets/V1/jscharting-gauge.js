@@ -207,18 +207,12 @@ class FormattedDataFromDS {
 		}
 
 		removeAllMeasures() {
-			const dataBinding = this.dataBindings.getDataBinding('myDataSource');
-			const dataSource = dataBinding.getDataSource();
-			const measures = dataSource.getMeasures();
-			measures.length = 0; // Clear the measures array
+			const dataBinding = this.dataBindings.getDataBinding('myDataSource').dataBinding.getDataSource().getMeasures() = 0; // Clear the measures array
 			dataBinding.update(); // Update the data binding to reflect changes
 		}
 		
 		removeAllDimensions() {
-			const dataBinding = this.dataBindings.getDataBinding('myDataSource');
-			const dataSource = dataBinding.getDataSource();
-			const dimensions = dataSource.getDimensions();
-			dimensions.length = 0; // Clear the dimensions array
+			const dataBinding = this.dataBindings.getDataBinding('myDataSource').dataBinding.getDataSource().getDimensions() = 0; // Clear the dimensions array
 			dataBinding.update(); // Update the data binding to reflect changes
 		}
 
