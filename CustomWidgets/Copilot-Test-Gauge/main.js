@@ -45,6 +45,15 @@ class AverageGauge extends HTMLElement {
     this.data = newBindings;
     this.updateGauge();
   }
+
+  setData(data) {
+    this.data = data;
+    this.updateGauge();
+  }
+
+  getData() {
+    return this.data;
+  }
 }
 
 customElements.define('averagegauge-main', AverageGauge);

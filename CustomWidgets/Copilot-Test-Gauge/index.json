@@ -48,8 +48,11 @@
             "type": "integer",
             "description": "The data to set."
           }
-        ],
-        "body": "this.data = data; this.updateGauge();"
+        ]
+      },
+      "getData": {
+        "description": "Get the data for the gauge.",
+        "returnType": "integer"
       }
     },
     "dataBindings": {
