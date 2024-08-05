@@ -47,4 +47,4 @@ class AverageGauge extends HTMLElement {
   }
 }
 
-customElements.define('com-yourvendor-averagegauge', AverageGauge);
+customElements.define('averagegauge-main', AverageGauge);
