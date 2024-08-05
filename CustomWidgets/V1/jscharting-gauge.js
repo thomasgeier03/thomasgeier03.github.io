@@ -211,7 +211,7 @@ class FormattedDataFromDS {
 		}
 
 		removeAllDimensions(){
-			this.dataBindings.getDataBinding('myDataSource').removeAllDimensions('dimensions');
+			this.dataBindings.getDataBinding('myDataSource').remove('dimensions');
 		}
 
 		async render() {
