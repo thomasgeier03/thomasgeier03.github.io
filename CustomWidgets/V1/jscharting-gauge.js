@@ -207,11 +207,11 @@ class FormattedDataFromDS {
 		}
 
 		removeAllMeasures(){
-			this.dataBindings.getDataBinding('myDataSource').removeAllMembersFromFeed('measures');
+			this.dataBindings.getDataBinding('myDataSource').removeAllMembers('measures');
 		}
 
 		removeAllDimensions(){
-			this.dataBindings.getDataBinding('myDataSource').removeAllDimensionsFromFeed('dimensions');
+			this.dataBindings.getDataBinding('myDataSource').removeAllDimensions('dimensions');
 		}
 
 		async render() {
