@@ -113,10 +113,12 @@
             "body": "this.dataBindings.getDataBinding('myDataSource').addDimensionToFeed('dimensions', dimensionId);"
         },
         "removeAllMeasures": {
-            "description": "Remove all measures configured in DataBinding"
+            "description": "Remove all measures configured in DataBinding",
+            "body": "this.dataBindings.getDataBinding('myDataSource').removeAllMembersFromFeed('measures');"
         },
         "removeAllDimensions": {
-            "description": "Remove all dimensions configured in DataBinding"
+            "description": "Remove all dimensions configured in DataBinding",
+            "body": "this.dataBindings.getDataBinding('myDataSource').removeAllDimensionsFromFeed('dimensions');"
         }
     },
     "events": {}
