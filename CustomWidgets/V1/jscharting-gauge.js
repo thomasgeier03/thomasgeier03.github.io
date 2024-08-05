@@ -216,6 +216,17 @@ class FormattedDataFromDS {
 			dataBinding.update(); // Update the data binding to reflect changes
 		}
 
+		removeDimensionById(dimensionId) {
+			const dataBinding = this.dataBindings.getDataBinding('myDataSource');
+			const dataSource = dataBinding.getDataSource();
+			const dimensions = dataSource.getDimensions();
+			const index = dimensions.findIndex(dimension => dimension.id === dimensionId);
+			if (index !== -1) {
+				dimensions.splice(index, 1); // Remove the dimension with the specified ID
+				dataBinding.update(); // Update the data binding to reflect changes
+			}
+		}
+
 		async render() {
 			if (!this._libLoaded) {
 				// Carico le librerie

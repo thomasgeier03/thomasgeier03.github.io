@@ -111,6 +111,16 @@
         },
         "removeAllDimensions": {
             "description": "Remove all dimensions configured in DataBinding"
+        },
+        "removeDimensionById": {
+            "description": "Remove a Dimension by its ID",
+            "parameters": [
+                {
+                    "name": "dimensionId",
+                    "type": "string",
+                    "description": "ID of the Dimension to remove"
+                }
+            ]
         }
     },
     "events": {}
