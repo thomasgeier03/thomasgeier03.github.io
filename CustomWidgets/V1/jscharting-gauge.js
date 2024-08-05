@@ -182,6 +182,38 @@ class FormattedDataFromDS {
 			}
 		}
 
+		getDataSource(){
+			return this.dataBindings.getDataBinding('myDataSource').getDataSource();
+		}
+
+		getDataBinding(){
+			return this.dataBindings.getDataBinding('myDataSource');
+		}
+
+		getDimensions(){
+			return this.dataBindings.getDataBinding('myDataSource').getDataSource().getDimensions();
+		}
+
+		getMeasures(){
+			return this.dataBindings.getDataBinding('myDataSource').getDataSource().getMeasures();
+		}
+
+		addMeasure(){
+			this.dataBindings.getDataBinding('myDataSource').addMemberToFeed('measures', measureId);
+		}
+
+		addDimension(){
+			this.dataBindings.getDataBinding('myDataSource').addDimensionToFeed('dimensions', dimensionId);
+		}
+
+		removeAllMeasures(){
+			this.dataBindings.getDataBinding('myDataSource').removeAllMembersFromFeed('measures');
+		}
+
+		removeAllDimensions(){
+			this.dataBindings.getDataBinding('myDataSource').removeAllDimensionsFromFeed('dimensions');
+		}
+
 		async render() {
 			if (!this._libLoaded) {
 				// Carico le librerie

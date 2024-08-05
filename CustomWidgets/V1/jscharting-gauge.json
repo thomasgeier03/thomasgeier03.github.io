@@ -70,24 +70,20 @@
         },
         "getDataSource": {
             "parameters": [],
-            "body": "return this.dataBindings.getDataBinding('myDataSource').getDataSource();",
             "returnType": "DataSource"
         },
         "getDataBinding": {
             "parameters": [],
-            "body": "return this.dataBindings.getDataBinding('myDataSource');",
             "returnType": "DataBinding"
         },
         "getDimensions": {
             "description": "Get all the Dimensions available in bound DataSource",
             "parameters": [],
-            "body": "return this.dataBindings.getDataBinding('myDataSource').getDataSource().getDimensions();",
             "returnType": "DimensionInfo[]"
         },
         "getMeasures": {
             "description": "Get all the Measures available in bound DataSource",
             "parameters": [],
-            "body": "return this.dataBindings.getDataBinding('myDataSource').getDataSource().getMeasures();",
             "returnType": "MeasureInfo[]"
         },
         "addMeasure": {
@@ -98,8 +94,7 @@
                     "type": "string",
                     "description": "ID of the Measure to add"
                 }
-            ],
-            "body": "this.dataBindings.getDataBinding('myDataSource').addMemberToFeed('measures', measureId);"
+            ]
         },
         "addDimension": {
             "description": "Add a new Dimension to DataBinding",
@@ -109,16 +104,13 @@
                     "type": "string",
                     "description": "ID of the Dimension to add"
                 }
-            ],
-            "body": "this.dataBindings.getDataBinding('myDataSource').addDimensionToFeed('dimensions', dimensionId);"
+            ]
         },
         "removeAllMeasures": {
-            "description": "Remove all measures configured in DataBinding",
-            "body": "this.dataBindings.getDataBinding('myDataSource').removeAllMembersFromFeed('measures');"
+            "description": "Remove all measures configured in DataBinding"
         },
         "removeAllDimensions": {
-            "description": "Remove all dimensions configured in DataBinding",
-            "body": "this.dataBindings.getDataBinding('myDataSource').removeAllDimensionsFromFeed('dimensions');"
+            "description": "Remove all dimensions configured in DataBinding"
         }
     },
     "events": {}
