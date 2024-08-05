@@ -21,5 +21,5 @@ function applyCustomStyling(shadowRoot) {
           transform-origin: bottom center;
       }
   `;
-  shadowRoot.appendChild(style);
+  shadowRoot.appendChild(style, "averagegauge-styling");
 }
