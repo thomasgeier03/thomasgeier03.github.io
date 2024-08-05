@@ -13,7 +13,7 @@
         {
             "kind": "main",
             "tag": "it-presales-sac-cw-jscharting-gauge",
-            "url": "/jscharting-gauge.js",
+            "url": "https://thomasgeier03.github.io/CustomWidgets/V1/jscharting-gauge.js",
            
             "integrity": "",
             "ignoreIntegrity": true
@@ -21,7 +21,7 @@
         {
           "kind": "styling",
           "tag": "it-presales-sac-cw-jscharting-gauge-aps",
-          "url": "/jscharting-gauge-aps.js",
+          "url": "https://thomasgeier03.github.io/CustomWidgets/V1/jscharting-gauge-aps.js",
           
           "ignoreIntegrity": true,
           "integrity": ""
