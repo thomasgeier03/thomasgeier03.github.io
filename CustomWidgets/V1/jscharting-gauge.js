@@ -206,12 +206,20 @@ class FormattedDataFromDS {
 			this.dataBindings.getDataBinding('myDataSource').addDimensionToFeed('dimensions', dimensionId);
 		}
 
-		removeAllMeasures(){
-			this.dataBindings.getDataBinding('myDataSource').removeAllMembers('measures');
+		removeAllMeasures() {
+			const dataBinding = this.dataBindings.getDataBinding('myDataSource');
+			const dataSource = dataBinding.getDataSource();
+			const measures = dataSource.getMeasures();
+			measures.length = 0; // Clear the measures array
+			dataBinding.update(); // Update the data binding to reflect changes
 		}
-
-		removeAllDimensions(){
-			this.dataBindings.getDataBinding('myDataSource').remove('dimensions');
+		
+		removeAllDimensions() {
+			const dataBinding = this.dataBindings.getDataBinding('myDataSource');
+			const dataSource = dataBinding.getDataSource();
+			const dimensions = dataSource.getDimensions();
+			dimensions.length = 0; // Clear the dimensions array
+			dataBinding.update(); // Update the data binding to reflect changes
 		}
 
 		async render() {
